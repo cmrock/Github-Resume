@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<a routerLink="/home"><i class="fa fa-long-arrow-left" style="font-size: 25px; margin-left: 15px;"></i></a>
+		</div>
+		<div class="col-md-12">
+			<table class="table">
+				<tr class="b-border">
+					<td colspan="2">
+						<h1><b>{{fullUserName | uppercase}}</b></h1>
+					</td>
+				</tr>
+				<tr><td></td><td></td></tr>
+				<tr *ngIf="allLanguages.length>0; else spinner">
+					<td class="fieldName"><i><h4>Languages</h4></i></td>
+					<td>
+						<ul>
+							<li *ngFor="let lang of allLanguages">{{lang}}</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<ng-template #spinner><i class="fa fa-spinner fa-spin"></i></ng-template>
+	</div>
+</div>
